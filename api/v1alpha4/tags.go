@@ -181,6 +181,11 @@ func (b BuildParams) WithCloudProvider(name string) BuildParams {
 	return b
 }
 
+func (b BuildParams) WithMyTag(tag string) BuildParams {
+	b.Additional["MyTagName"] = tag
+	return b
+}
+
 // Build builds tags including the cluster tag and returns them in map form.
 func Build(params BuildParams) Tags {
 	tags := make(Tags)
